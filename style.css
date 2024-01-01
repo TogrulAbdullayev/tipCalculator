@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --hover: #92DFD5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Space Mono', sans-serif;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--light-grayish-cyan);
+}
+
+#app header {
+  padding: 20px;
+}
+
+#app header h1 {
+  color: var(--very-dark-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+#app main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 20px;
+}
+
+#app main form {
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 30px;
+  border-radius: 25px;
+  width: fit-content;
+}
+
+#app main form #calc {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  width: 390px;
+  height: 450px;
+  padding: 20px;
+}
+
+#app main form label {
+  color: var(--dark-grayish-cyan);
+}
+
+#app main form input {
+  font-size: 24px;
+  border: none;
+  padding: 5px 15px;
+  text-align: end;
+  color: var(--very-dark-cyan);
+  width: 354px;
+  border-radius: 5px;
+}
+
+#app main form input::placeholder {
+  color: var(--grayish-cyan)
+}
+
+#app main form #bill {
+  background: url(./images/icon-dollar.svg) no-repeat scroll 15px;
+  background-size: 12px;
+  margin-bottom: 10px;
+}
+
+#app main form input::-webkit-outer-spin-button,
+#app main form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#app main form input:focus {
+  outline-color: var(--strong-cyan);
+  caret-color: var(--strong-cyan);
+}
+
+#app main form ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: fit-content;
+  margin-bottom: 10px;
+}
+
+#app main form ul li input[type=radio] {
+  display: none;
+}
+
+#app main form ul li label:hover {
+  background-color: var(--hover);
+  color: var(--very-dark-cyan);
+}
+
+#app main form ul li input:focus ~ label {
+  background-color: var(--very-dark-cyan);
+}
+
+#app main form ul li input[type=radio]:checked ~ label {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan)
+}
+
+#app main form ul li label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 108px;
+  height: 46px;
+  border-radius: 5px;
+  background-color: var(--very-dark-cyan);
+  font-size: 24px;
+  color: #fff;
+  transition: 0.1s ease-in;
+  cursor: pointer;
+}
+
+#app main form ul li input {
+  width: 108px;
+  height: 46px;
+  padding: 5px;
+}
+
+#app main form ul li input::placeholder {
+  color: var(--dark-grayish-cyan);
+  text-align: center;
+}
+
+#app main form #calc label span {
+  color: red;
+  margin-left: 55px;
+}
+
+#app main form #ppl {
+  background: url(./images/icon-person.svg) no-repeat scroll 12px;
+}
+
+#app main form #result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 390px;
+  height: fit-content;
+  background-color: var(--very-dark-cyan);
+  border: none;
+  border-radius: 15px;
+  padding: 30px 30px;
+}
+
+#app main form #result div {
+  display: flex;
+  justify-content: space-between;
+}
+
+#app main form #result div:last-of-type {
+  margin-top: 30px;
+}
+
+#app main form #result label {
+  color: #fff;
+  display: block;
+  width: 100px;
+}
+
+#app main form #result div:last-of-type label {
+  color: #fff;
+  display: block;
+  width: 80px;
+}
+
+#app main form #result label b {
+  color: var(--very-dark-cyan)
+}
+
+#app main form #result label span {
+  color: var(--grayish-cyan);
+}
+
+#app main form #result span {
+  color: var(--strong-cyan);
+}
+
+#app main form #result input {
+  text-align: center;
+  background-color: var(--strong-cyan);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.1s ease-in;
+  margin-top: 120px;
+}
+
+#app main form #result input:hover {
+  background-color: var(--hover);
+}
+
+#app main form #result input:disabled {
+  background-color: hsla(172, 67%, 45%, 0.2);
+  cursor: default;
+}
+
+#app main form #result .amount {
+  font-size: 32px;
+}
+
+@media (max-width: 945px) {
+  #app main {
+    padding: 0;
+  }
+
+  #app main form {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+@media (max-width: 475px) {
+  #app main form {
+    padding: 15px;
+    gap: 60px;
+  }
+
+  #app main form input {
+    font-size: 24px;
+    border: none;
+    padding: 5px 15px;
+    text-align: end;
+    color: var(--very-dark-cyan);
+    width: 230px;
+    border-radius: 5px;
+  }
+
+  #app main form ul {
+    justify-content: center;
+  }
+
+  #app main form #calc {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    width: 290px;
+  }
+
+  #app main form label {
+    align-self: flex-start;
+  }
+
+  #app main form #calc label span {
+    margin-left: 20px;
+    font-size: 13px;
+  }
+
+  #app main form #result {
+    width: 250px;
+  }
+
+  #app main form #result div:last-of-type {
+    margin: 0;
+  }
+
+  #app main form #result input {
+    margin: 0;
+  }
+
+  #app main form #result .amount {
+    font-size: 20px;
+  }
+}
