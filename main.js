@@ -65,8 +65,8 @@ tip6.addEventListener("focus", (e) => {
   else {
     percent = Number(e.target.value) / 100;
     if(calc) {
-      tip.innerHTML = '$' + (Number(bill.value) * percent / Number(ppl.value)) + '.00';
-      total.innerHTML = '$' + ((Number(bill.value) * percent + Number(bill.value)) / Number(ppl.value)) + '.00';
+      tip.innerHTML = '$' + (Number(bill.value) * percent / Number(ppl.value)).toFixed(2);
+      total.innerHTML = '$' + ((Number(bill.value) * percent + Number(bill.value)) / Number(ppl.value)).toFixed(2);
       sub.disabled = false;
     }
     else {
@@ -98,12 +98,6 @@ function validate() {
   else {
     calc = false;
   }
-  setTimeout(() => {
-    tipr = tip.innerHTML.slice(0, tip.innerHTML.indexOf(".") + 3);
-    totalr = total.innerHTML.slice(0, total.innerHTML.indexOf(".") + 3);
-    tip.innerHTML = tipr;
-    total.innerHTML = totalr;
-  }, 0)
 }
 
 function check(e) {
@@ -122,8 +116,8 @@ function check(e) {
 
 function calculate(e) {
   if(calc) {
-    tip.innerHTML = '$' + (Number(bill.value) * percent / Number(ppl.value)) + '.00';
-    total.innerHTML = '$' + ((Number(bill.value) * percent + Number(bill.value)) / Number(ppl.value)) + '.00';
+    tip.innerHTML = '$' + (Number(bill.value) * percent / Number(ppl.value)).toFixed(2);
+    total.innerHTML = '$' + ((Number(bill.value) * percent + Number(bill.value)) / Number(ppl.value)).toFixed(2);
     sub.disabled = false;
   }
   else {
