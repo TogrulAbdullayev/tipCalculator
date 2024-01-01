@@ -5,9 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="./main.js"></script>
+    <div id="app">
+      <header>
+        <h1>Spli<br>tter</h1>
+      </header>
+      <main>
+        <form>
+          <fieldset id="calc">
+            <label for="bill">Bill</label><br>
+            <input type="number" id="bill" name="bill" placeholder="0"><br>
+            <label for="tip">Select Tip %</label><br>
+            <ul>
+              <li>
+                <input type="radio" id="tip1" name="tip" class="5">
+                <label for="tip1">5%</label>
+              </li>
+              <li>
+                <input type="radio" id="tip2" name="tip" class="10">
+                <label for="tip2">10%</label>
+              </li>
+              <li>
+                <input type="radio" id="tip3" name="tip" class="15">
+                <label for="tip3">15%</label>
+              </li>
+              <li>
+                <input type="radio" id="tip4" name="tip" class="25">
+                <label for="tip4">25%</label>
+              </li>
+              <li>
+                <input type="radio" id="tip5" name="tip" class="40">
+                <label for="tip5">40%</label>
+              </li>
+              <li>
+                <input type="number" id="tip6" name="tip" placeholder="Custom">
+              </li>
+            </ul><br>
+            <label for="ppl">Number of People <span></span></label><br>
+            <input type="number" id="ppl" name="ppl" placeholder="0">
+          </fieldset>
+          <fieldset id="result">
+            <div>
+              <label>Tip Amount<span> / person</span></label>
+              <span class='amount'>$0.00</span>
+            </div><br>
+            <div>
+              <label>Total<b>___</b><span> / person</span></label>
+              <span class='amount'>$0.00</span>
+            </div><br><br>
+            <input id="sub" type="button" value="Reset" disabled>
+          </fieldset>
+        </form>
+      </main>
+    </div>
+    <script src="./main.js"></script>
   </body>
 </html>
